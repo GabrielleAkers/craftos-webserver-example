@@ -19,7 +19,6 @@ Install docker then just do
 ```
 sudo ./deploy_local.sh
 ```
-The server will be accessible at `http://localhost:8081`
 
 ### Running in Docker on a remote machine
 Assuming you have a remote server with ssh access set up and Docker installed on it:
