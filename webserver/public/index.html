@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script defer>
+            const ws = new WebSocket("/");
+            ws.addEventListener("message", e => {
+                if (typeof(e.data) === "string") {
+                    /** @type {string[]} */
+                    const the_data = JSON.parse(e.data);
+                    const l = document.getElementById("data_list");
+                    l.innerHTML = the_data.map(d => `<li>${JSON.stringify(d)}</li>`).join("");
+                }
+            });
+        </script>
+    </head>
+    <body style='background-color: #1d2130; color: white;'>
+            <div style='margin: auto; text-align: center; padding: 70px 0;width: 500px'>
+                <h1>The stuff you sent is here &#128511;</h1>
+                <ol id="data_list">
+                </ol>
+            </div>
+    </body>
+</html>
