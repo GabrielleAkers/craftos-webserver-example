@@ -5,11 +5,14 @@ An example webserver I wrote for a [question on reddit](https://www.reddit.com/r
 I included a Dockerfile and two deploy scripts you can use to run it if you don't want to install a bunch of dependencies (besides Docker).
 
 ## Running the webserver
+Install node v24 then
 ```
+cd webserver
 npm install
 npm start
 ```
 The default port is 8081
+The server will be accessible at `http://localhost:8081`
 
 ### Running in Docker locally
 Install docker then just do
