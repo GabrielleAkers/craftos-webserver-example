@@ -21,7 +21,7 @@ app.post("/", (req, res) => {
     theData.push(req.body);
 
     connectedListeners.forEach(ws => {
-        if (ws.OPEN) {
+        if (ws.readyState == ws.OPEN) {
             ws.send(JSON.stringify(theData));
         }
     });
