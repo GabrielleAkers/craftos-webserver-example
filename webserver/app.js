@@ -31,7 +31,9 @@ app.post("/", (req, res) => {
 app.ws("/", /** @param {WebSocket} ws */(ws, req) => {
     console.log("someone connected");
     connectedListeners.push(ws);
-    ws.send(JSON.stringify(theData));
+    ws.on("open", () => {
+        ws.send(JSON.stringify(theData));
+    });
 })
 
 app.listen(port, "0.0.0.0", () => console.log(`listening ...`));
